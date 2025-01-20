@@ -2,6 +2,7 @@ import EightBall from "@/components/Drag.tsx/Drag";
 import DragConstraints from "@/components/Drag.tsx/Drag";
 import App from "@/components/Drag.tsx/DragTestExample";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -14,6 +15,11 @@ export default function Home() {
         </h1>
         <EightBall />
       </main>
+      <Link href="https://github.com/MalouLandsgaard" target="_blank">
+        <p className="hover:underline absolute bottom-0 right-0 p-4 text-[#5E5E5E]  text-xs sm:text-sm uppercase font-semibold">
+          @MalouLandsgaard
+        </p>
+      </Link>
     </div>
   );
 }
