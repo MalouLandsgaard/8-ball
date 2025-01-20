@@ -79,14 +79,6 @@ export default function EightBall() {
               className="w-full h-full rounded-full absolute top-0 left-0 z-20 pointer-events-none"
             />
           </motion.div>
-          {/* <motion.div
-            style={{
-              opacity: 0.7,
-              background:
-                "radial-gradient(circle at 50% 15%, #333 0%, #000 100%)",
-            }}
-            className="absolute w-full h-full rounded-full z-20"
-          ></motion.div> */}
         </motion.div>
       </motion.div>
       <style>{`
