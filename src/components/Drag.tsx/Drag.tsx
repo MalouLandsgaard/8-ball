@@ -33,18 +33,9 @@ export default function EightBall() {
   };
 
   return (
-    <div className="w-full h-auto aspect-square">
-      <motion.div style={{ width: "100%", height: "100%" }}>
-        <motion.div
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            width: "100%",
-            height: "100%",
-            position: "relative",
-          }}
-        >
+    <div className="w-full max-w-[550px] h-auto aspect-square">
+      <motion.div className="w-full h-full">
+        <motion.div className="flex justify-center items-center w-full h-full relative">
           <motion.div
             drag
             dragConstraints={{ left: 0, right: 0, top: 0, bottom: 0 }}
@@ -53,54 +44,28 @@ export default function EightBall() {
             onDragStart={() => setActive({ x: active.x, y: active.y })}
             onDragEnd={handleDragEnd}
             style={{
-              background:
-                "radial-gradient(circle at 50% 20%, #333 0%, #000 100%)",
-              width: "100%",
-              height: "100%",
-              borderRadius: "50%",
-              position: "absolute",
               x: dx,
               y: dy,
-              zIndex: 1,
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "start",
-              paddingTop: "20%",
-              boxShadow: "0 4px 12px rgba(0, 0, 0, 0.5)",
+              background:
+                "radial-gradient(circle at 50% 20%, #333 0%, #000 100%)",
             }}
+            className="w-full h-full rounded-full absolute z-10 flex justify-center items-start pt-[20%] shadow-lg"
           >
-            <motion.p
-              style={{
-                backgroundColor: "white",
-                color: "black",
-                fontWeight: "bold",
-                borderRadius: "50%",
-                marginLeft: "33%",
-                marginRight: "33%",
-                width: "100%",
-                aspectRatio: "1",
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-                textAlign: "center",
-                padding: "4vw",
-                transform: "rotateX(10deg) rotateY(0deg)",
-              }}
-            >
+            <motion.p className="bg-white text-black font-bold rounded-full mx-[33%] w-full aspect-square flex justify-center items-center text-center p-3 sm:p-5 transform rotate-x-10 rotate-y-0">
               <motion.span
-                key={message + "8"} // This triggers a re-render when message changes
+                key={message + "8"}
                 hidden={shouldAnimate}
-                style={{ fontSize: "10vw" }}
+                className="text-3xl sm:text-6xl"
               >
                 {8}
               </motion.span>
               <motion.span
-                key={message} // This triggers a re-render when message changes
+                key={message}
                 hidden={!shouldAnimate}
                 initial={{ opacity: shouldAnimate ? 0 : 1 }}
                 animate={{ opacity: shouldAnimate ? 1 : 1 }}
-                transition={{ duration: 2, delay: 1 }} // Adjust duration for fade-in effect
-                className="text-md sm:text-3xl"
+                transition={{ duration: 2, delay: 1 }}
+                className="text-md sm:text-3xl line-clamp-2"
               >
                 {message}
               </motion.span>

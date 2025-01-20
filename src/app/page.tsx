@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="m-8 sm:m-40 font-[family-name:var(--font-geist-sans)]">
+    <div className="m-8 sm:m-20 font-[family-name:var(--font-geist-sans)]">
       <main className="flex flex-col gap-8">
         <h1 className="font-bold text-3xl self-center mb-12">
           What would Malou do?
