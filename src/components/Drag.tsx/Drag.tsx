@@ -33,7 +33,7 @@ export default function EightBall() {
   };
 
   return (
-    <div className=" w-96 h-96">
+    <div className="w-full h-auto aspect-square">
       <motion.div style={{ width: "100%", height: "100%" }}>
         <motion.div
           style={{
@@ -54,7 +54,7 @@ export default function EightBall() {
             onDragEnd={handleDragEnd}
             style={{
               background:
-                "radial-gradient(circle at 50% 33%, #333 0%, #000 100%)",
+                "radial-gradient(circle at 50% 20%, #333 0%, #000 100%)",
               width: "100%",
               height: "100%",
               borderRadius: "50%",
@@ -65,7 +65,7 @@ export default function EightBall() {
               display: "flex",
               justifyContent: "center",
               alignItems: "start",
-              paddingTop: "15%",
+              paddingTop: "20%",
               boxShadow: "0 4px 12px rgba(0, 0, 0, 0.5)",
             }}
           >
@@ -74,21 +74,33 @@ export default function EightBall() {
                 backgroundColor: "white",
                 color: "black",
                 fontWeight: "bold",
-                fontSize: "2rem",
                 borderRadius: "50%",
-                height: "120px",
-                width: "120px",
+                marginLeft: "33%",
+                marginRight: "33%",
+                width: "100%",
+                aspectRatio: "1",
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "center",
                 textAlign: "center",
+                padding: "4vw",
+                transform: "rotateX(10deg) rotateY(0deg)",
               }}
             >
               <motion.span
+                key={message + "8"} // This triggers a re-render when message changes
+                hidden={shouldAnimate}
+                style={{ fontSize: "10vw" }}
+              >
+                {8}
+              </motion.span>
+              <motion.span
                 key={message} // This triggers a re-render when message changes
+                hidden={!shouldAnimate}
                 initial={{ opacity: shouldAnimate ? 0 : 1 }}
                 animate={{ opacity: shouldAnimate ? 1 : 1 }}
                 transition={{ duration: 2, delay: 1 }} // Adjust duration for fade-in effect
+                className="text-md sm:text-3xl"
               >
                 {message}
               </motion.span>
