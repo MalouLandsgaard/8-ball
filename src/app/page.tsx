@@ -1,8 +1,4 @@
 import EightBall from "@/components/Drag/Drag";
-import DragConstraints from "@/components/Drag/Drag";
-import App from "@/components/Drag/DragTestExample";
-import ShakeComponent from "@/components/Shake/Shake";
-import Image from "next/image";
 import Link from "next/link";
 
 export default function Home() {

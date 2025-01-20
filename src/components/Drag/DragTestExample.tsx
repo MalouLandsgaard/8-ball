@@ -48,8 +48,8 @@ export default function App() {
   return (
     <div className="app">
       <motion.div
-        animate={{ "--base-hue": 360 } as any}
-        initial={{ "--base-hue": 0 } as any}
+        animate={{ "--base-hue": 360 }}
+        initial={{ "--base-hue": 0 }}
         transition={{ duration: 10, loop: Infinity, ease: "linear" }}
         style={{ width: "100%", height: "100%" }}
       >

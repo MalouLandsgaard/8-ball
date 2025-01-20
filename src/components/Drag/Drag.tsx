@@ -1,6 +1,6 @@
 "use client";
 
-import { clamp, motion, useMotionValue, useSpring } from "framer-motion";
+import { motion, useMotionValue, useSpring } from "framer-motion";
 import { useState } from "react";
 
 export default function EightBall() {
