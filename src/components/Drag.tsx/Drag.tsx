@@ -5,7 +5,7 @@ import { useState } from "react";
 
 export default function EightBall() {
   const [active, setActive] = useState({ x: 0, y: 0 });
-  const [message, setMessage] = useState("8");
+  const [message, setMessage] = useState("");
   const [shouldAnimate, setShouldAnimate] = useState(false);
   const messages = [
     "Go for it",
@@ -47,11 +47,11 @@ export default function EightBall() {
               x: dx,
               y: dy,
               background:
-                "radial-gradient(circle at 50% 20%, #333 0%, #000 100%)",
+                "radial-gradient(circle at 50% 15%, #333 0%, #000 100%)",
             }}
-            className="w-full h-full rounded-full absolute z-10 flex justify-center items-start pt-[20%] shadow-lg"
+            className="w-full h-full rounded-full absolute z-10 flex justify-center items-start pt-[15%] shadow-lg "
           >
-            <motion.p className="bg-white text-black font-bold rounded-full mx-[33%] w-full aspect-square flex justify-center items-center text-center p-3 sm:p-5 transform rotate-x-10 rotate-y-0">
+            <motion.p className="bg-white text-black  font-black uppercase rounded-full mx-[33%] w-full aspect-square flex justify-center items-center text-center p-3 sm:p-5 transform rotate-x-10 rotate-y-0">
               <motion.span
                 key={message + "8"}
                 hidden={shouldAnimate}
